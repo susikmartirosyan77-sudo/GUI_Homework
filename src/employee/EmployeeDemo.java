@@ -1,4 +1,3 @@
-
 package employee;
 
 import java.util.Scanner;
@@ -94,11 +93,18 @@ public class EmployeeDemo {
                             position
                     );
 
-                    // Ավելացնում ենք աշխատակցին զանգվածում
-                    storage.addEmployee(employee);
+                    // Փորձում ենք ավելացնել աշխատակցին
+                    if (storage.addEmployee(employee)) {
 
-                    System.out.println("Employee successfully added!");
-                    break;
+                        System.out.println("Employee successfully added!");
+
+                    } else {
+
+                        System.out.println(
+                                "Employee with ID " + employeeID + " already exists."
+                        );
+                    }
+                    break; // <-- Այս break-ը պարտադիր է, որպեսզի ծրագիրը չանցնի հաջորդ case-ին
 
                 // 2 - տպում ենք բոլոր աշխատակիցներին
                 case 2:
